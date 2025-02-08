@@ -1,12 +1,15 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
-const companySchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  phone: { type: String, required: true },
-  city: { type: String, required: true },
-  desciption: { type: String, required: true },
-  lastUpdate: { type: Date, default: Date.now },
-}, { timestamps: true });
+const companySchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    email: { type: String, unique: true },
+    phone: { type: String },
+    city: { type: String },
+    description: { type: String, required: true },
+    lastUpdate: { type: Date, default: Date.now },
+  },
+  { timestamps: true }
+);
 
-export default mongoose.model("Company", companySchema);
+module.exports = mongoose.model("Company", companySchema);
