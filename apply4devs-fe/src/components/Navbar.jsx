@@ -38,7 +38,7 @@ const Navbar = (props) => {
 
         {/* Right Section - Name */}
         <div className="flex items-center">
-          <span className="max-[431px]:hidden sm:text-2xl font-semibold text-neutral-700">1000 companies</span>
+          <span className="max-[431px]:hidden sm:text-2xl font-semibold text-neutral-700">{props.companyLength} companies</span>
         </div>
       </div>
     </nav>
